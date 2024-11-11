@@ -1,5 +1,7 @@
 import sqlite3
 import datetime
+
+
 class Checking(object):
     def __init__(self):
         self.conn = None
@@ -10,6 +12,7 @@ class Checking(object):
         except Exception as e:
             print(f"Error connecting to db: {e}")
         return self.conn
+
     def check(self):
         self.connectDb()
         cursor = self.conn.cursor()
@@ -25,7 +28,7 @@ class Checking(object):
             print(f"Error: {e}")
         self.conn.close()
 
+
 if __name__ == "__main__":
     c = Checking()
     c.check()
-
